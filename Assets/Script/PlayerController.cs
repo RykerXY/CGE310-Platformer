@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Move()
+    private void Move()
     {
         //Sprint
         if(defaultMoveSpeed == 0) defaultMoveSpeed = moveSpeed;       
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         
     }
     
-    void Jump()
+    private void Jump()
     {
         if (Input.GetButton("Jump") && isGrounded)
         {
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
             canDoubleJump = false;
         }
     }
-    void Throw()
+    private void Throw()
     {
         GameObject attackSprite = Instantiate(attackPrefab, transform.position, transform.rotation);
         Rigidbody2D attackSpriteRb = attackSprite.GetComponent<Rigidbody2D>();
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
             attackSpriteRb.AddForce(direction * throwForce, ForceMode2D.Impulse);
         }
     }
-    void flipSprite()
+    private void flipSprite()
     {
         if(Input.GetKey(KeyCode.A))
         {
