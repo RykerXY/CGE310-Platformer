@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Attack
   - Enemy
+  - Box
+  - Ladder
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX

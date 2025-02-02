@@ -7,6 +7,7 @@ public class HealtSystem : MonoBehaviour
     public GameObject heal_2;
     public GameObject heal_3;
     public GameObject heal_4;
+    public GameObject reStartButton;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -42,10 +43,15 @@ public class HealtSystem : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Dead");
+            reStartButton.SetActive(true);
         }
     }
     void destroySprite(GameObject gameObject)
     {
         Destroy(gameObject);
+    }
+    public int getHealth()
+    {
+        return health;
     }
 }
