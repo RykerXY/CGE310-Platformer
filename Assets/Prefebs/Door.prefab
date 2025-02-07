@@ -151,4 +151,4 @@ MonoBehaviour:
   buttonController: {fileID: 0}
   speed: 2
   distance: 5
-  targetYPosition: -5
+  targetYPosition: -8

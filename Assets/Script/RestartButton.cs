@@ -17,8 +17,6 @@ public class RestartButton : MonoBehaviour
         canvasGroup = GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0f; // เริ่มต้นให้โปร่งใส
         gameObject.SetActive(false);
-
-        Debug.Log(health);
     }
 
     void Update()

@@ -8,25 +8,16 @@ public class HealtSystem : MonoBehaviour
     public GameObject heal_3;
     public GameObject heal_4;
     public GameObject reStartButton;
+    public Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    void OnCollisionEnter2D(Collision2D collision) 
-    {
-        //Damage
-        if(collision.gameObject.tag == "Enemy")
-        {
-            health -= 1;
-        }
-        //Destroy Sprite
         if (health == 3){
             destroySprite(heal_4);
         }
@@ -42,8 +33,17 @@ public class HealtSystem : MonoBehaviour
         //GameOver
         if (health <= 0)
         {
+            animator.SetBool("isDead", true);
             Debug.Log("Dead");
             reStartButton.SetActive(true);
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collision) 
+    {
+        //Damage
+        if(collision.gameObject.tag == "Enemy")
+        {
+            health -= 1;
         }
     }
     void destroySprite(GameObject gameObject)
@@ -53,5 +53,9 @@ public class HealtSystem : MonoBehaviour
     public int getHealth()
     {
         return health;
+    }
+    public void decreeseHealth()
+    {
+        health -= 1;
     }
 }
